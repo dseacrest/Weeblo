@@ -1,0 +1,22 @@
+﻿
+
+
+<!--View in MVC is a cshtml file-->
+<!--Html support c# constructs with the "at" sign-->
+<!--Insert viewbags at top of page-->
+<!--Insert all layout pages to include in _ViewStart.cshtml-->
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+
+     <div class="col-md-12">
+         <h1>Welcome to the Projects</h1>
+         <p>This app will allow you to go to projects</p>
+         <a asp-controller="App" asp-action="Project" class="btn btn-lg btn-success">Login to View Projects</a>
+     </div>
+
+</div>
+

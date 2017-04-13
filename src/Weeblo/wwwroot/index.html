@@ -1,0 +1,84 @@
+﻿<!--html commenting is brackets with exclmation dash dash-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weeblo - ScoutSheet Project Management</title>
+    <meta charset="utf-8" />  <!--Allows ASCII or unicode, uses 8 bit blocks, accepted in all major browsers-->
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="css/site.css"/> <!--Don't include wwwroot in href-->
+
+    <!--Style Block - In the header of page-->
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<!--Style Tag - In the div element-->
+<body style="font-family: sans-serif; font-size: 14px;">
+
+    <!--Select text and hit Shift+Alt+W to surround text in a div tag-->
+    <!--Spans are used for styling smaller portions than paragraph sutch as coloring one word in a sentence-->
+    <!--Shift+FN+2 to add new files-->
+    <!--Ordered lists (ol) are for numbered lists, unordered lists (ul) are for bullet lists, each have list items (li)-->
+    <!--Zen Coding: type "div" and tab button to create div, "ul>li" and tab to get list, "table>tr*3>td*2" to get table, anything and ">lorem" to get lorem ipsum text, "div#content.address" to get div with id of content and class of address-->
+    <!--Ctl+Shift+Enter to move out of inline braces to next line-->
+
+    <div id="sidebar">
+        <img src="img/devon.jpg" alt="image" class="sideimages" />
+        <span id="username">Devon Seacrest</span>
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div id="main">
+            <div>
+                <button id="SideBarToggle">Toggle Menu</button>
+            </div>
+            <h3>Weeblo</h3>
+            <p>This page is to help ScoutSheet with project management.</p>
+
+            <form>
+                <div>
+                    <label>Date</label>
+                    <input />
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input />
+                </div>
+                <div><input type="submit" value="Add" /></div>
+            </form>
+
+        </div>
+        <div id="footer">
+            &copy; <!--Copyright entity that creates the copyright sign--> 2017 - ScoutSheet
+        </div>
+    </div>
+
+    <!--Bower/jquery reference-->
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+
+    <!--Javascript reference-->
+        <!--Javascript can help change DOM in reaction to users interacting with the web page-->
+        <!--DOM is all elements of HTML (and css) in the tree of objects, can be used to change objects, properties, methods, and events-->
+        <!--Put javascript on bottom is best practice to make sure that it is executed after the rest of the page has loaded-->
+        <!--Javascript block on page-->
+    <script type="text/javascript" src="js/site.js">
+        //Can also include javascript here
+        //var ele = document.getElementById("username");
+        //ele.innerHTML = "Liam Seacrest";
+    </script>
+
+</body>
+
+</html>

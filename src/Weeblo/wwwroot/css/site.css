@@ -1,0 +1,120 @@
+﻿/*Css commenting is closed slash with star*/
+
+/*Id assumes there is only one div tag with that id (#) per page, they should be on large pieces of your page that are only going to be used once*/
+/*Id assumes there is only multiple div tags with that class (.) per page*/
+
+/*Box model - Starts with content (text, images, etc.), then padding (between content and border), then border (edge that can be colored), then margin (between border and browser frame)*/
+/*Can specify distances from top, left, right, bottom*/
+/*When you calculate actual pixels sizes dont' forget to include the weight op content, padding, border, and margin*/
+/*If you specify one pixel size it does it for top, bottom, left, right, two pixel sizes is for top, bottom then left, right, four pixel sizes is to customize each one, don't separate with comma*/
+
+/*Its important to know what div elements are inside of the other when you write the css*/
+/*Take time to cleanup css so it is structured and tabed in the same order as html*/
+/*Tab out css when there are parent child relationships (indicated by a space)*/
+
+/*Hover over on css elements to see what browsers they are supported in and then right click to "add missing vendor specific" code */
+
+/*label{
+    font-weight: bold;
+    display: block; Gives the div elements (label in this case) their own line
+}
+
+input[type=text], input[type=password], textarea {
+    width: 150px;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0; clears out all unecessary margins on the page
+}*/
+
+#sidebar {
+    background: #222;
+    color: #eee;
+    position: fixed; /*Position fixed tells us we want it to be in a fixed position on the browser (left, right, middle, top, bottom, etc.)*/
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+    -moz-transition: left ease .25s;
+    -o-transition: left ease .25s;
+    -webkit-transition: left ease .25s;
+    transition: left ease .25s; /*Animation in css, must put into main class and event class*/
+}
+
+    #sidebar.hide-sidebar {
+        left: -250px;
+        -moz-transition: left ease .25s;
+        -o-transition: left ease .25s;
+        -webkit-transition: left ease .25s;
+        transition: left ease .25s; /*Animation in css*/
+    }
+
+        .sideimages {
+        max-width: 50px;
+        border: 1px solid #222;
+        padding: 2px;
+    }
+
+        .menu{
+        font-size: 12px;
+    }
+
+        .menu li{
+            list-style-type: none;
+        }
+
+            /*Space v not space - Without a space it means only match to .menu list items that have the class name active not who have a class within them that is active*/
+            .menu li.active{
+                font-weight: bold;
+            }
+
+    #wrapper {
+        margin: 0 0 0 250px; /*Need to move all content outside of sidebar 205px to left so that it is not covered by sidebar*/
+        -moz-transition: margin-left ease .25s;
+        -o-transition: margin-left ease .25s;
+        -webkit-transition: margin-left ease .25s;
+        transition: margin-left ease .25s; /*Animation in css, must put into main class and event class*/
+    }
+
+        #wrapper.hide-sidebar {
+            margin-left: 0;
+            -moz-transition: margin-left ease .25s;
+            -o-transition: margin-left ease .25s;
+            -webkit-transition: margin-left ease .25s;
+            transition: margin-left ease .25s; /*Animation in css*/
+        }
+
+        /*Replaced with bootswatch*/
+        /*#main{
+            background-color: #eee;
+            padding: 4px;
+            margin: 0; 0 is 0 you don't have to specify units
+        }
+
+        #footer{
+            background-color: #222222;
+            color: #eee;
+            padding: 8px 4px;
+            position: fixed; Puts footer at bottom of page, footer is still in wrapper so it is 250px from left
+            bottom: 0; Puts footer at bottom of page
+            width: 100%; Puts footer to be full width of page
+
+        }*/
+
+
+        #map{
+            //For GMaps
+            width: 100%;
+            height: 600px;
+        }
+
+
+
+
+        
+
+
+
+

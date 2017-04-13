@@ -1,0 +1,25 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <!--as syntax for data binding-->
+    <div class="text-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div> <!--ng-show show only if error message exists-->
+    <wait-cursor display-when="vm.isBusy"></wait-cursor> <!--Directives get put to lower case with dash between them-->
+    <table class="table table-responsive table-striped">
+        <tr ng-repeat="project in vm.projects">
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td> <!--Pipe "|" filter-->
+            <td><a ng-href="#/editor/{{project.name}}" class="btn btn-sm btn-primary">Manage</a></td><!--Route is /editor-->
+        </tr>
+    </table>
+
+    <form novalidate name="newProjectForm" ng-submit="vm.addProject()">
+        <div class="form-group">
+            <label for="name">Project Name</label>
+            <input class="form-control" type="text" id="name" name="name" ng-model="vm.newProject.name" required ng-minlength="5" />
+            <span ng-show="newProjectForm.name.$error.required" class="text-warning">Name is required.</span>
+            <span ng-show="newProjectForm.name.$error.minlength" class="text-warning">Must be atleast 5 characters.</span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-success btn-sm" ng-disabled="newProjectForm.$invalid" />
+        </div>
+    </form>
+
+</div>

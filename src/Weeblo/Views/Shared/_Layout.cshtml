@@ -1,0 +1,124 @@
+﻿<!--html commenting is brackets with exclmation dash dash-->
+<!--Use ~/folder/file when refering to file locations so that the computer knows to go to the root directory-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weeblo - ScoutSheet Project Management @ViewBag.Title</title>
+    <meta charset="utf-8" />  <!--Allows ASCII or unicode, uses 8 bit blocks, accepted in all major browsers-->
+    <!--Font Awesome, doesn't require javascript to run-->
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <!--Must link and then put a script block below (at bottom of page)-->
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="~/css/site.css" /> <!--Don't include wwwroot in href-->
+    <!--Bootswatch (www.bootswatch.com - modifies boostrap with template design packages), doesn't require javascript to run-->
+    <link rel="stylesheet" href="~/lib/bootswatch/yeti/bootstrap.min.css" />
+    <!--Style Block - In the header of page-->
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<!--Style Tag - In the div element-->
+<body style="font-family: sans-serif; font-size: 14px;">
+
+    <div id="sidebar">
+
+        <!--Only shows if logged in-->
+        @if (User.Identity.IsAuthenticated)
+        {
+            <img src="~/img/devon.jpg" alt="image" class="sideimages" />
+            <span id="username">@User.Identity.Name</span>
+        }
+
+        <ul class="nav">
+            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li> <!--link tag using action controllers-->
+            <li><a asp-controller="App" asp-action="About">About</a></li>
+            <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+            <!--Only shows if logged in-->
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="App" asp-action="Project">Projects</a></li>
+                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+            }
+            else
+            {
+                <li><a asp-controller="App" asp-action="Project">Login</a></li>
+            }
+        </ul>
+
+    </div>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbaar-left">
+                    <li>
+                        <button id="SideBarToggle" class="btn btn-primary">
+                            <i class="fa fa-angle-left"></i> <!--i tag for icon or font put in front of text, glyphicon being replaced by font awesome-->
+                        </button>
+                    </li>
+                </ul>
+
+                <a asp-controller="App" asp-action="Index" class="navbar-brand">Weeblo Project Management</a> <!--Anchor-->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-save"></i> Save
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-print"></i> Print
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="main" class="container-fluid">
+            <!--Container Fluid: Take as much of webpage as possible and when we do grid later it will fit in the grid-->
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+        <div id="footer" class="container-fluid">
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <h4 class="text-center text-info">&copy; <!--Copyright entity that creates the copyright sign--> 2017 - ScoutSheet</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Bower/jquery reference-->
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!--Javascript reference-->
+    <!--Javascript can help change DOM in reaction to users interacting with the web page-->
+    <!--DOM is all elements of HTML (and css) in the tree of objects, can be used to change objects, properties, methods, and events-->
+    <!--Put javascript on bottom is best practice to make sure that it is executed after the rest of the page has loaded-->
+    <!--Javascript block on page-->
+
+    @RenderSection("scripts", false)
+
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/site.js">
+        //Can also include javascript here
+        //var ele = document.getElementById("username");
+        //ele.innerHTML = "Liam Seacrest";
+    </script>
+
+</body>
+
+
+
+
+</html>

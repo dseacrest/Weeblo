@@ -1,0 +1,10 @@
+//Config.json is where you store commonly referenced items like API keys, emails, connection strings, etc.
+//This allows you to have different files for testing, production, deployment, etc.
+{
+  "MailSettings": {
+    "ToAddress": "devon@scoutsheet.com"
+  },
+  "ConnectionStrings": {
+    "ProjectContextConnection": "Server=(localdb)\\MSSQLLocalDB;Database=ProjectDB;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+}

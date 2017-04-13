@@ -1,0 +1,106 @@
+﻿CodeTips
+
+Shift+Alt+W to surround text in a div tag 
+ 
+Spans are used for styling smaller portions than paragraph sutch as coloring one word in a sentence 
+ 
+Shift+FN+2 to add new files 
+
+ctor to add constructor (public class Name {})
+
+prop to agg property (public in Id {get; set;})
+ 
+Ordered lists (ol) are for numbered lists
+Unordered lists (ul) are for bullet lists
+Each have list items (li) 
+ 
+Zen Coding:
+Type "div" and tab button to create div
+"ul>li" and tab to get list
+"table>tr*3>td*2" to get table
+Aanything and ">lorem" to get lorem ipsum text
+"div#content.address" to get div with id of content and class of address 
+ 
+Ctl+Shift+Enter to move out of inline braces to next line 
+
+Bootstrap Grid System: 
+12 column grid system)
+Grid system has different calls for different screen sizes so you can set different sizes for different screen sizes 
+Lg
+Md
+Xs
+Put everything in a grid within a row class 
+
+Allow ASCII or unicode, uses 8 bit blocks, accepted in all major browsers by adding <meta charset="utf-8" />   
+
+Font Awesome, stylized fonts and icons, doesn't require javascript to run 
+
+Bootstrap, template for CSS, requires javascript to run
+
+Bootswatch (www.bootswatch.com - modifies boostrap with template design packages), doesn't require javascript to run 
+
+ICollection allows you to add and remove to a list, IEnumerable only allows you to add to a list
+
+Database
+Create database context class, inherit from DbContext
+Create table classes
+Add DbSet to database context class
+Add db context service to startup.cs
+Configure db in AppController in AppController.cs
+Configure db in IActionResults in AppController.cs
+Override OnConfiguring in ProjectContext
+Add IConfigurationRoot to ProjectContext class in ProjectContext.cs
+Add ConnectionString to config.json
+Pass DbContextOptions into base class in ProjectContext.cs
+Add Microsoft.EntityFrameworkCore.Tools to project.json in dependencies and tools
+CMD line - dotnet ef migrations add InitialDatabase - adds migrations folder
+CMD lin - dotnet ef database update - adds new database to sql server menu
+Add ProjectContextSeedData.cs
+Add services.AddTransient<ProjectContextSeedData>(); to startup.cs
+Inject ProjectContextSeedData seeder int Configure in startup.cs
+Call it with seeder.EnsureSeedData().Wait(); in startup.cs
+
+Must configure everyghing and then add service in Startup.cs
+
+In MVC6 API and View Controllers are all controllers
+
+Postman - Toool to test APIs
+
+Ctr+Shift+B - Build Solution
+F5 - Run with debugging
+Ctr+F5 - Run w/o debugging
+Ctrl + . to add quick actions
+Fn+F12 - navigate over to a class or get help 
+Hightlight(text) + Option + Up or Down Arrows - Moves line up or down jumping over other lines
+Fn + Left - moves to beginning of line
+
+camelCase Json instead of PascalCase - helps with JavaScript users
+
+Get - Retrieval of Data
+Post - Creating New Data
+Put/Patch - Updating existing data
+Delete - Deletes data
+
+AutoMapper - lets us efficiently save things into our database
+
+Build compiles the code, start runs the code, start with debugging runs the code checking it for bugs
+
+Services are code modules that do specific tasks to supplement your code (like taking a city and getting the latitude and longitude)
+
+Lambda expressions are used to query databases
+
+Get to bower.json for adding packages by going to top of solution explorer and clicking "show all files"
+
+Angular directive is to reuse existing code
+
+Troubleshooting:
+Check code
+Rebuild and relaunch
+Right click refresh to clear hard cache (Fn + F12 - Developer Mode)
+Clear cookies in developer mode
+
+In URL everything after pound (#) is client side view 
+
+@ sign code is razor code
+
+//Left off posting new stop - validating and creating new stop video

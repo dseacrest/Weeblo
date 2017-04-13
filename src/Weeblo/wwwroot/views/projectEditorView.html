@@ -1,0 +1,47 @@
+﻿<div>
+    <div>
+        <a href="#/" class="btn btn-sm btn-default"><i class="fa fa-angle-left"></i>Back</a>
+    </div>
+    <div class="col-md-3">
+        <!--You can set gid for med size screens to 6 part and 4 parts for small screens by adding col-xs-4-->
+        <h2>{{vm.projectName}}</h2>
+        <wait-cursor display-when="vm.isBusy"></wait-cursor>
+        <div class="alert alert-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
+
+        <form novalidate name="newStoryForm" ng-submit="vm.addStory()">
+            <div class="form-group">
+                <!--Form group helps group form controls-->
+                <label>Name</label>
+                <input class="form-control" id="name" name="name" ng-model="vm.newStory.name" required />  <!--ng-pattern="" for regular expression validation-->
+                <span class="text-danger" ng-show="newStoryForm.name.$error.required">Required</span>
+
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input class="form-control" id="description" name="description" ng-model="vm.newStory.description" required/>
+                <span class="text-danger" ng-show="newStoryForm.description.$error.required">Required</span>
+            </div>
+            <div>
+                <input class="btn btn-success" type="submit" value="Add" ng-disabled="newStoryForm.$invalid" />
+            </div>
+        </form>
+
+        <table class="table table-responsive table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr ng-repeat="story in vm.stories">
+                <td>{{story.name}}</td>
+                <td>{{story.description}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="col-md-9">
+
+        <h2>Map</h2>
+        <div id="map"></div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿
+<!--View in MVC is a cshtml file-->
+<!--Html support c# constructs with the "at" sign-->
+<!--Insert viewbags at top of page-->
+<!--Insert all layout pages to include in _ViewStart.cshtml-->
+@{
+    ViewBag.Title = "Home Page";
+}
+<!--Angular - Put in div tags as "ng" or data-ng-->
+<!--Double curly braces is angular syntax {{}}, similar to "at" section in razor file-->
+@section Scripts{
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/js/simpleControls.js"></script>
+    <script src="~/js/app-projects.js"></script>
+    <script src="~/js/projectsController.js"></script>
+    <script src="~/js/projectEditorController.js"></script>
+}
+<!--Angular-->
+<div class="row" ng-app="app-projects">
+
+    <div ng-view></div>
+
+    
+
+</div>
+
